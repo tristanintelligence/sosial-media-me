@@ -1,26 +1,59 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>about me</title>  <!-- Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">  <!-- Icons -->  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+  <title>about me</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
       min-height: 100vh;
-      background: url('https://files.catbox.moe/13op5f.jpg') center/cover no-repeat fixed;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #eaeaea;
+      position: relative;
     }
 
+    /* Background dengan overlay terpisah */
     body::before {
       content: '';
       position: fixed;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.75));
-      /* blur removed for clean background */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://files.catbox.moe/13op5f.jpg') center/cover no-repeat fixed;
+      z-index: -2;
+    }
+
+    /* Overlay gelap untuk background saja */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.75)
+      );
+      z-index: -1;
     }
 
     .card {
@@ -34,11 +67,18 @@
       text-align: center;
       box-shadow: 0 30px 80px rgba(0,0,0,.6);
       animation: enter 1.2s cubic-bezier(.19,1,.22,1);
+      z-index: 1;
     }
 
     @keyframes enter {
-      0% { opacity: 0; transform: translateY(40px) scale(.96); }
-      100% { opacity: 1; transform: translateY(0) scale(1); }
+      0% {
+        opacity: 0;
+        transform: translateY(40px) scale(.96);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
     .profile {
@@ -95,6 +135,9 @@
       background: rgba(255,255,255,.06);
       border: 1px solid rgba(255,255,255,.08);
       transition: all .35s ease;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
     }
 
     .link i {
@@ -114,56 +157,80 @@
       letter-spacing: .3px;
     }
 
-    /* subtle floating animation */
+    /* subtle floating effect */
     .card::after {
       content: '';
       position: absolute;
       inset: -1px;
       border-radius: inherit;
       animation: float 6s ease-in-out infinite;
+      pointer-events: none;
+      z-index: -1;
     }
 
     @keyframes float {
-      0%,100% { transform: translateY(0); }
+      0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-6px); }
     }
 
     @media (max-width: 420px) {
-      .profile img { width: 78px; height: 78px; }
+      .profile img {
+        width: 78px;
+        height: 78px;
+      }
     }
-  </style></head>
-<body>  <div class="card">
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
     <div class="profile">
       <img src="https://files.catbox.moe/2dc32s.jpg" alt="it me windi photo 1">
-      <img src="https://files.catbox.moe/w38k9d.jpg" alt="Windi photo 2">
-    </div><h1>its me windi</h1>
-<p>jangan lupa mampir ke sosial media saya</p>
+      <img src="https://files.catbox.moe/w38k9d.jpg" alt="it me windi photo 2">
+    </div>
 
-<div class="links">
-  <a class="link" href="https://whatsapp.com/channel/0029VbBmmFX84Om9S5vkcj17" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i>
-    <span>WhatsApp Channel</span>
-  </a>
+    <h1>its me windi</h1>
+    <p>jangan lupa mampir ke sosial media saya</p>
 
-  <a class="link" href="https://www.instagram.com/windibetmood_" target="_blank">
-    <i class="fa-brands fa-instagram"></i>
-    <span>Instagram</span>
-  </a>
+    <div class="links">
+      <a class="link"
+         href="https://whatsapp.com/channel/0029VbBmmFX84Om9S5vkcj17"
+         target="_blank"
+         rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp Channel</span>
+      </a>
 
-  <a class="link" href="https://t.me/windiloh666" target="_blank">
-    <i class="fa-brands fa-telegram"></i>
-    <span>Telegram</span>
-  </a>
+      <a class="link"
+         href="https://www.instagram.com/windibetmood_?igsh=MWFmMDZsNjkwMjNoMg%3D%3D&utm_source=qr"
+         target="_blank"
+         rel="noopener noreferrer">
+        <i class="fa-brands fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
 
-  <a class="link" href="https://saweria.co/HiWindi" target="_blank">
-    <i class="fa-solid fa-mug-hot"></i>
-    <span>Saweria</span>
-  </a>
-</div>
+      <a class="link"
+         href="https://t.me/windiloh666"
+         target="_blank"
+         rel="noopener noreferrer">
+        <i class="fa-brands fa-telegram"></i>
+        <span>Telegram</span>
+      </a>
 
-<footer>
-  windi cantik
-</footer>
+      <a class="link"
+         href="https://saweria.co/HiWindi"
+         target="_blank"
+         rel="noopener noreferrer">
+        <i class="fa-solid fa-mug-hot"></i>
+        <span>Saweria</span>
+      </a>
+    </div>
 
-  </div></body>
-  </html>
+    <footer>
+      windi cantik
+    </footer>
+  </div>
+
+</body>
+        </html>
