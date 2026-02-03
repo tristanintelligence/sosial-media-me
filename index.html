@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>about me</title>  <!-- Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">  <!-- Icons -->  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      background: url('https://files.catbox.moe/13op5f.jpg') center/cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #eaeaea;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.75));
+      /* blur removed for clean background */
+    }
+
+    .card {
+      position: relative;
+      width: 380px;
+      max-width: 92%;
+      background: rgba(20, 20, 20, 0.55);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 22px;
+      padding: 32px 28px;
+      text-align: center;
+      box-shadow: 0 30px 80px rgba(0,0,0,.6);
+      animation: enter 1.2s cubic-bezier(.19,1,.22,1);
+    }
+
+    @keyframes enter {
+      0% { opacity: 0; transform: translateY(40px) scale(.96); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .profile {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .profile img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      transition: transform .4s ease, box-shadow .4s ease;
+    }
+
+    .profile img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(0,0,0,.6);
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: .4px;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 13.5px;
+      opacity: .75;
+      margin-bottom: 26px;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      color: #f1f1f1;
+      font-size: 14px;
+      font-weight: 500;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      transition: all .35s ease;
+    }
+
+    .link i {
+      font-size: 18px;
+    }
+
+    .link:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.12);
+      box-shadow: 0 10px 30px rgba(0,0,0,.45);
+    }
+
+    footer {
+      margin-top: 28px;
+      font-size: 11px;
+      opacity: .45;
+      letter-spacing: .3px;
+    }
+
+    /* subtle floating animation */
+    .card::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @media (max-width: 420px) {
+      .profile img { width: 78px; height: 78px; }
+    }
+  </style></head>
+<body>  <div class="card">
+    <div class="profile">
+      <img src="https://files.catbox.moe/2dc32s.jpg" alt="it me windi photo 1">
+      <img src="https://files.catbox.moe/w38k9d.jpg" alt="Windi photo 2">
+    </div><h1>its me windi</h1>
+<p>jangan lupa mampir ke sosial media saya</p>
+
+<div class="links">
+  <a class="link" href="https://whatsapp.com/channel/0029VbBmmFX84Om9S5vkcj17" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>WhatsApp Channel</span>
+  </a>
+
+  <a class="link" href="https://www.instagram.com/windibetmood_" target="_blank">
+    <i class="fa-brands fa-instagram"></i>
+    <span>Instagram</span>
+  </a>
+
+  <a class="link" href="https://t.me/windiloh666" target="_blank">
+    <i class="fa-brands fa-telegram"></i>
+    <span>Telegram</span>
+  </a>
+
+  <a class="link" href="https://saweria.co/HiWindi" target="_blank">
+    <i class="fa-solid fa-mug-hot"></i>
+    <span>Saweria</span>
+  </a>
+</div>
+
+<footer>
+  windi cantik
+</footer>
+
+  </div></body>
+  </html>
